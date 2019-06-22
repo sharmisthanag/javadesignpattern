@@ -6,10 +6,10 @@ import twitter4j.conf.ConfigurationBuilder;
 import java.util.List;
 
 public class TwitterServiceImpl implements TwitterService {
-    private static final String TWITTER_CONSUMER_KEY = "xwDLoA3APlUgFNq8Xvptv0HVD";
-    private static final String TWITTER_SECRET_KEY = "gmaa34VvqqLg2C5wCoYuZxXabIAk1fKn2EZhsetpIgLLXjqdsE";
-    private static final String TWITTER_ACCESS_TOKEN = "1141985587974426626-fNd8jkWnkRYkLzMLwzdKlwysrwRsx0";
-    private static final String TWITTER_ACCESS_TOKEN_SECRET = "SvPQjQaMLXOwTCS5KyeTYTOkLjCmSDWCJyuRSFYm3JLqe";
+    private static final String TWITTER_CONSUMER_KEY = "";
+    private static final String TWITTER_SECRET_KEY = "";
+    private static final String TWITTER_ACCESS_TOKEN = "";
+    private static final String TWITTER_ACCESS_TOKEN_SECRET = "";
 
     @Override
     public String getTimeLine(String screenName) {
@@ -24,8 +24,8 @@ public class TwitterServiceImpl implements TwitterService {
         StringBuilder sb = new StringBuilder();
         try {
             Query query = new Query(screenName);
-            query.since("2019-01-21");
-            query.until("2019-06-22");
+            //query.since("2019-01-21");
+            //query.until("2019-04-22");
             query.count(100);
             int i=1;
             QueryResult result;
