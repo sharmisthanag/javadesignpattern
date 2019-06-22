@@ -1,0 +1,6 @@
+chain of responsibility pattern is a behavioral pattern that
+decouples a request from a handling object in a chain of handlers until it is finally recognized
+decoupling of sender and receiver.receiver contains reference to next receiver.this promotes loose coupling.
+eg: java.util.Logging.log(),filter,securityChain filter in Spring
+Design:Chain of reciever object,handler is interface based,concrete handler for implementation,each handler has reference
+to the next

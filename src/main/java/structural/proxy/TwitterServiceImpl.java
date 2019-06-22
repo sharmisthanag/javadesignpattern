@@ -1,0 +1,60 @@
+package structural.proxy;
+
+import twitter4j.*;
+import twitter4j.conf.ConfigurationBuilder;
+
+import java.util.List;
+
+public class TwitterServiceImpl implements TwitterService {
+    private static final String TWITTER_CONSUMER_KEY = "xwDLoA3APlUgFNq8Xvptv0HVD";
+    private static final String TWITTER_SECRET_KEY = "gmaa34VvqqLg2C5wCoYuZxXabIAk1fKn2EZhsetpIgLLXjqdsE";
+    private static final String TWITTER_ACCESS_TOKEN = "1141985587974426626-fNd8jkWnkRYkLzMLwzdKlwysrwRsx0";
+    private static final String TWITTER_ACCESS_TOKEN_SECRET = "SvPQjQaMLXOwTCS5KyeTYTOkLjCmSDWCJyuRSFYm3JLqe";
+
+    @Override
+    public String getTimeLine(String screenName) {
+        ConfigurationBuilder cb = new ConfigurationBuilder();
+        cb.setDebugEnabled(true)
+                .setOAuthAccessToken(TWITTER_ACCESS_TOKEN)
+                .setOAuthAccessTokenSecret(TWITTER_ACCESS_TOKEN_SECRET)
+                .setOAuthConsumerKey(TWITTER_CONSUMER_KEY)
+                .setOAuthConsumerSecret(TWITTER_SECRET_KEY);
+        TwitterFactory tf = new TwitterFactory(cb.build());
+        Twitter tw = tf.getInstance();
+        StringBuilder sb = new StringBuilder();
+        try {
+            Query query = new Query(screenName);
+            query.since("2019-01-21");
+            query.until("2019-06-22");
+            query.count(100);
+            int i=1;
+            QueryResult result;
+            do {
+                result = tw.search(query);
+                List<Status> tweets = result.getTweets();
+                for (Status tweet : tweets) {
+                    System.out.println("@" + tweet.getUser().getScreenName() + " - "
+                            +tweet.getCreatedAt().toString()+"-"+ tweet.getText()+"  "+i);
+                    i++;
+
+
+                }
+
+
+            } while ((query = result.nextQuery()) != null);
+            System.out.println("END");
+            System.exit(0);
+
+        } catch (TwitterException te) {
+            te.printStackTrace();
+            System.out.println("Failed to search tweets: " + te.getMessage());
+            System.exit(-1);
+        }
+        return sb.toString();
+    }
+
+    @Override
+    public void postInTimeLine(String screenName, String message) {
+
+    }
+}

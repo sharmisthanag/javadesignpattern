@@ -1,0 +1,37 @@
+prototype is used when the type of object to create is determined
+by a prototypical instance which is cloned to produce a new   instance.
+often time prototype is used to get a unique instance of the same object
+
+structural pattern are focused on how you use or utilize objects something
+like performance, refactoring or memory utilization
+
+adapter pattern is designed to connect new code to legacy code without changing the contract in legacy code
+convert interface to another interface.it translate request.collections api,arrays to list conversion,client->adapter->adaptee
+
+bridge pattern is meant to decouple abstraction and  implementation using encapsulation,composition and inheritance
+example:jdbc driver
+
+composite design pattern is hierarchical type pattern that deals with tree structure of information.It has tree structure.
+Leaf and composite have same interface.Composite!=Composition
+exp: java.awt.Component,Restful service GETs
+
+decorator pattern: the decorator pattern is a hierarchical pattern that builds functionality at each level while using composition
+ from similar data types.add behaviour without effecting others.It follows single responsibility principle
+ eg: java.io.InputStream,java.util.Collections#checkList.
+ It is inheritance based,uses composition and inheritance,alternative of subclassing
+ Its constructor requires instance from hierarchy.Component,ConcreteComponent,Decorator,ConcreteDecorator
+
+Facade Pattern:facade pattern provides a simplified interface to a complex or difficult to use system that is often the result of a
+poorly designed API.make api easier to use hide details from client.reduce dependencies.refactoring pattern
+eg.:java.net.URL.class that utilizes composition.no inheritance needed.
+
+Flyweight pattern minimizes memory use by sharing data with similarly typed objects.more efficient use of memory.
+optimization pattern when we have large number of similar object.object state are extrinsic .extrinsic properties are one that are
+not essential or inherent eg java.io.String.String are immutable and loaded from string literal pool that is flyweight.caching
+is hint to use flyweight.method  valueOf in primitive object is flyweight in action.
+Pattern of patterns.utilizes a factory,Client:Factory:Flyweight:Concrete Flyweight
+
+Proxy pattern is a pattern that use as an interface to something else.interface by wrapping.can add functionality.security,simplifying
+proxy called to access real object
+e.g: java.lang.reflect.Proxy; java.rmi.*.Client,Interface,InvocationHandler,Proxy
+
