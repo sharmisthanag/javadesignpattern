@@ -2,5 +2,19 @@ chain of responsibility pattern is a behavioral pattern that
 decouples a request from a handling object in a chain of handlers until it is finally recognized
 decoupling of sender and receiver.receiver contains reference to next receiver.this promotes loose coupling.
 eg: java.util.Logging.log(),filter,securityChain filter in Spring
-Design:Chain of reciever object,handler is interface based,concrete handler for implementation,each handler has reference
+Design:Chain of receiver object,handler is interface based,concrete handler for implementation,each handler has reference
 to the next
+
+command pattern encapsulates each request as object.object oriented callback.sender decoupled from processor.
+add undo functionality .example: implementation java.lang.Runnable.object per command.command interface.execute method.
+unexecute method optional.use reflection.Command,Invoker,concrete command,receiver.object per command.class contains 'what'
+encapsulate action.
+
+Interpreter represents grammar.music notation,mathematical notation.used parse source code.
+example: java.util.Pattern, java.text.Format.
+Design:Abstract Expression,Interpret,Terminal Expression,NonTerminal Expression,Context,Client
+
+visitor pattern : choose when to separate algorithm from object.open close principle.e.g: java.lang.model.elementVisitor.Visitor
+class contains the changes and specialization rather than changing the original object.
+design: interface based.elements,
+
