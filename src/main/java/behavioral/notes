@@ -14,7 +14,18 @@ Interpreter represents grammar.music notation,mathematical notation.used parse s
 example: java.util.Pattern, java.text.Format.
 Design:Abstract Expression,Interpret,Terminal Expression,NonTerminal Expression,Context,Client
 
-visitor pattern : choose when to separate algorithm from object.open close principle.e.g: java.lang.model.elementVisitor.Visitor
+behavioral.visitor pattern : choose when to separate algorithm from object.open close principle.e.g: java.lang.model.elementVisitor.Visitor
 class contains the changes and specialization rather than changing the original object.
 design: interface based.elements,
+
+iterator pattern is a great pattern for providing navigation without exposing the structure of an object.traverse a container.
+don't expose underlying structure.decouples algorithm.sequential.example: java.util.Iterator, Enumeration.
+interface based,factory method based,independent,fail fast:2 iterator can't modify the underlying object without error being thrown.
+enumeration is built safe.
+
+Mediator pattern is used to define how objects interact with one another without having them refer to each other explicitly.
+e.g: java.lang.Timer,java.lang.reflect.Method.Mediator knows about colleague,rather than colleague knowing about each other
+Mediator,COncreteMediator.mediator handles compounding of commands.
+
+Mememto pattern is used to externalize an object's state, usually to provide rollback functionality.
 
