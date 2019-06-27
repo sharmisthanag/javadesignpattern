@@ -28,4 +28,19 @@ e.g: java.lang.Timer,java.lang.reflect.Method.Mediator knows about colleague,rat
 Mediator,COncreteMediator.mediator handles compounding of commands.
 
 Mememto pattern is used to externalize an object's state, usually to provide rollback functionality.
+used to restore object to its previous state, externalize internal state.java.util.Date,java.io.Serializable.
+this is class based,originator is the actual object of which we want to  creates actual memento,
+caretaker manages copies or mememto that we have created (list of undo's available in menu),
+mememto represents copies.mememto  consist of magic cookiemagic cookie is combination of field that is takes to recreate
+or copy the state of the oject and stored inside mememto.
+
+Observer is a decoupling pattern when we have a subject to be observed by one or more observers.
+this is chosen when there is subject with one or many observers,
+event handling(pub-sub:async fashion/observer used in synchronous fashion)
+eg.: java.util.Observer.java.util.EvenListener,javax.jms.Topic
+Subject,Observer,Observable,views are observer:subject,concreteSubject,Observer,ConcreteObserver
+
+State design pattern is used when we need to represent State in an application.To localize state specific behaviour.
+current application state is stored in an object rather than a mix variables through out your application.
+WHAT state we are in rather than WHERE.open close principle.reduces cyclomatic complexity by reducing if/else condition
 
