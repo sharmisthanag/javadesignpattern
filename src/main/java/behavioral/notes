@@ -7,15 +7,15 @@ to the next
 
 command pattern encapsulates each request as object.object oriented callback.sender decoupled from processor.
 add undo functionality .example: implementation java.lang.Runnable.object per command.command interface.execute method.
-unexecute method optional.use reflection.Command,Invoker,concrete command,receiver.object per command.class contains 'what'
+inexecute method optional.use reflection.Command,Invoker,concrete command,receiver.object per command.class contains 'what'
 encapsulate action.
 
 Interpreter represents grammar.music notation,mathematical notation.used parse source code.
 example: java.util.Pattern, java.text.Format.
 Design:Abstract Expression,Interpret,Terminal Expression,NonTerminal Expression,Context,Client
 
-behavioral.visitor pattern : choose when to separate algorithm from object.open close principle.e.g: java.lang.model.elementVisitor.Visitor
-class contains the changes and specialization rather than changing the original object.
+Visitor pattern : choose when to separate algorithm from object.open close principle.e.g: java.lang.model.elementVisitor.Visitor
+class contains the changes and specialization rather than changing the original object.backward compatibility
 design: interface based.elements,
 
 iterator pattern is a great pattern for providing navigation without exposing the structure of an object.traverse a container.
@@ -43,4 +43,14 @@ Subject,Observer,Observable,views are observer:subject,concreteSubject,Observer,
 State design pattern is used when we need to represent State in an application.To localize state specific behaviour.
 current application state is stored in an object rather than a mix variables through out your application.
 WHAT state we are in rather than WHERE.open close principle.reduces cyclomatic complexity by reducing if/else condition
+
+Strategy pattern is used to enable the strategy or algorithm at runtime.eliminate conditional statement .
+it encapsulate algorithm/behavior in classes.eliminate conditional statements in our application.
+difficult to add new strategies.client aware of  the strategies.e.g: java.util.comparator(various comparator strategies.)
+strategies are independent.URMl:context,strategy,concreteStrategy
+
+Template design pattern is used to define an algorithm that allows sub-classes to redefine part of the algorithm
+without changing its structure.
+e.g: java.util.Collections#sort(): class implements Comparable public int compareTo(Person person)
+java.util.AbstractList#indexOf()
 
